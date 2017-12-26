@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/forsigner/md-to-schema/compare/v1.0.1...v1.1.0) (2017-12-26)
+
+
+### Features
+
+* 调整对外api ([73943c8](https://github.com/forsigner/md-to-schema/commit/73943c8))
+
+
+
 <a name="1.0.1"></a>
 ## 1.0.1 (2017-12-25)
 
