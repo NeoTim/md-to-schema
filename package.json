@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "js-yaml": "^3.10.0",
+    "object-to-schema": "^1.2.1",
     "simple-markdown": "^0.3.1"
   },
   "devDependencies": {
