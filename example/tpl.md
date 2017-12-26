@@ -1,4 +1,4 @@
-# Info
+# Basic
 
 ```yaml
 title: Book detailxxx

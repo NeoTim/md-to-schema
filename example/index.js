@@ -8,5 +8,5 @@ const file = path.join(__dirname, 'tpl.md');
 const str = fs.readFileSync(file, 'utf-8');
 const f = data => JSON.stringify(data, null, 2);
 
-const r = f(mdToSchema(str));
+const r = f(mdToSchema.full(str));
 console.log(r);
