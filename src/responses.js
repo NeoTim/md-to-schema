@@ -4,6 +4,8 @@ const SimpleMarkdown = require('simple-markdown');
 const { json } = require('object-to-schema');
 const yaml = require('js-yaml');
 const mdParse = SimpleMarkdown.defaultBlockParse;
+const parser = require('json-parser');
+const toQuotesObject = require('./to-quotes-object');
 
 module.exports = str => {
   const responses = [];
@@ -42,10 +44,11 @@ function getResponses(responses) {
     const ymlObj = yaml.safeLoad(yml.content);
 
     if (!js) return {};
-    /* eslint-disable no-new-func */
-    const obj = new Function(`return ${js.content}`)();
+    const quotesObject = toQuotesObject(js.content);
+    const body = parser.parse(quotesObject);
+
     result.push({
-      body: obj,
+      body,
       mock: {
         delay: ymlObj.delay,
         enable: ymlObj.mock,

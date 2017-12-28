@@ -1,18 +1,22 @@
 # Basic
 
 ```yaml
-title: Book detailxxx
-path: /books/1
+title: Book detail
+description: Detail of a bookx
+path: /books/11
 method: GET
+author:
 ```
 
 # Request
 
 ```js
 {
+  body: {},
   query: {
-    lang: "en|string|language type"
-  }
+    lang: "en" // language type
+  },
+  headers: {}
 }
 ```
 
@@ -21,33 +25,18 @@ method: GET
 ## Scene 1
 
 ```yaml
-desc: 成功返回
+desc: Get a book successful
 mock: false
 delay: 100
 ```
 
 ```js
 {
-  msg: "msg|string|API Message",
+  msg: "msg", // API Message
   data: {
-    author: "Paul Grahamsss|string|Book author",
-    name: "Hackers and Painters|string|Book name"
+    author: "Paul Graham", // Book author
+    name: "Hackers and Painters" // Book name
   },
-  code: "OK|string|Business Code"
-}
-```
-
-## Scene 2
-
-```yaml
-desc: 成功返回
-mock: false
-delay: 100
-```
-
-```js
-{
-  msg: "msg|string|API Message",
-  code: "OK|string|Business Code"
+  code: "OK" // Business Code
 }
 ```
