@@ -1,10 +1,10 @@
 # Basic
 
 ```yaml
-title: Book detail
-description: Detail of a bookx
+title: Update book
+description: Update a bookx
 path: /books/11
-method: GET
+method: PUT
 author:
 ```
 
@@ -12,11 +12,14 @@ author:
 
 ```js
 {
-  body: {},
-  query: {
-    lang: "en" // language type
+  body: {
+    name: "Hackers and Painters", // Book name
+    author: "Paul Graham" // Book author
   },
-  headers: {}
+  query: {},
+  headers: {
+    token: "qwerty123456" // API Token
+  }
 }
 ```
 
@@ -25,18 +28,18 @@ author:
 ## Scene 1
 
 ```yaml
-desc: Get a book successful
+desc: 成功返回
 mock: false
 delay: 100
 ```
 
 ```js
 {
-  msg: "msg", // API Message
+  code: "OK", // Business Code
   data: {
-    author: "Paul Graham", // Book author
-    name: "Hackers and Painters" // Book name
+    name: "Hackers and Painters", // Book name
+    author: "Paul Graham" // Book author
   },
-  code: "OK" // Business Code
+  msg: "msg" // API Message
 }
 ```
