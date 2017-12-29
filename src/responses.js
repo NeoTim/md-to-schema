@@ -4,8 +4,7 @@ const SimpleMarkdown = require('simple-markdown');
 const { json } = require('object-to-schema');
 const yaml = require('js-yaml');
 const mdParse = SimpleMarkdown.defaultBlockParse;
-const parser = require('json-parser');
-const toQuotesObject = require('./to-quotes-object');
+const { parse } = require('json-comment-parser');
 
 module.exports = str => {
   const responses = [];
@@ -44,8 +43,7 @@ function getResponses(responses) {
     const ymlObj = yaml.safeLoad(yml.content);
 
     if (!js) return {};
-    const quotesObject = toQuotesObject(js.content);
-    const body = parser.parse(quotesObject);
+    const body = parse(js.content);
 
     result.push({
       body,

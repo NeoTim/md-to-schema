@@ -40,6 +40,6 @@ delay: 100
     name: "Hackers and Painters", // Book name
     author: "Paul Graham" // Book author
   },
-  msg: "msg" // API Message
+  msg: "msg", // API Message
 }
 ```

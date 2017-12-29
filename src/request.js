@@ -3,8 +3,7 @@
 const SimpleMarkdown = require('simple-markdown');
 const { json } = require('object-to-schema');
 const mdParse = SimpleMarkdown.defaultBlockParse;
-const parser = require('json-parser');
-const toQuotesObject = require('./to-quotes-object');
+const { parse } = require('json-comment-parser');
 
 module.exports = str => {
   const request = getRequest(str);
@@ -27,7 +26,6 @@ function getRequest(request) {
   );
 
   if (!find) return;
-  const quotesObject = toQuotesObject(find.content);
-  const object = parser.parse(quotesObject);
+  const object = parse(find.content);
   return object;
 }
