@@ -21,6 +21,7 @@
     "estraverse": "^4.2.0",
     "js-yaml": "^3.10.0",
     "json-comment-parser": "^1.1.5",
+    "object-to-md": "^1.4.3",
     "object-to-schema": "^1.5.0",
     "simple-markdown": "^0.3.1"
   },
